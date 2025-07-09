@@ -26,11 +26,15 @@ class GoodController extends Controller
     // Save the newly created good
     public function store(Request $request)
     {
+        $messages = [
+            'name.regex' => 'The name must start with a letter or number.',
+        ];
+
         $request->validate([
-            'name' => 'required|string',
+            'name' => 'required|string|regex:/^[a-zA-Z0-9]/',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
-        ]);
+        ], $messages);
 
         Auth::user()->goods()->create($request->all());
 

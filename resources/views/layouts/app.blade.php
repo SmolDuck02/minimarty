@@ -18,32 +18,6 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <nav class="bg-white border-b border-gray-200 px-4 py-3 flex justify-between">
-                <div class="flex space-x-4">
-                    <a href="{{ route('dashboard') }}"
-                    class="{{ request()->routeIs('dashboard') ? 'text-blue-600 font-bold' : 'text-gray-800 hover:text-blue-500' }}">
-                    Dashboard
-                    </a>
-
-                    <a href="{{ route('goods.index') }}"
-                    class="{{ request()->routeIs('goods.index') ? 'text-blue-600 font-bold' : 'text-gray-800 hover:text-blue-500' }}">
-                    Marketplace
-                    </a>
-
-                    <a href="{{ route('goods.create') }}"
-                    class="{{ request()->routeIs('goods.create') ? 'text-blue-600 font-bold' : 'text-gray-800 hover:text-blue-500' }}">
-                    Sell Something
-                    </a>
-                </div>
-
-                <div>
-                    <a href="{{ route('profile.edit') }}"
-                    class="{{ request()->routeIs('profile.edit') ? 'text-blue-600 font-bold' : 'text-gray-800 hover:text-blue-500' }}">
-                    Profile
-                    </a>
-                </div>
-            </nav>
-
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white shadow">
